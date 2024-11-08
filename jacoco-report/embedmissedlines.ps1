@@ -24,7 +24,7 @@ foreach ($line in $mdData) {
         }
         $workspaceFiles = Get-ChildItem -Path "$env:GITHUB_WORKSPACE" -Recurse -File
         $resolvedFilePath = $workspaceFiles | Where-Object {$_.FullName -like "*$filePath"}
-            Write-Output "FullName is [$_.FullName]"
+            Write-Output "workspaceFiles is [$workspaceFiles]"
             Write-Output "filePath is [*$filePath]"
             Write-Output "resolvedFilePath is [$resolvedFilePath]"
 
