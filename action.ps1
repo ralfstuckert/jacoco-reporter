@@ -67,7 +67,7 @@ function Build-CoverageReport
                 reportTitle = $script:coverage_report_title
             }
 
-        & "$PSScriptRoot/jacoco-report/embedmissedlines.ps1" -mdFile $script:coverage_report_path
+        & "$PSScriptRoot/jacoco-report/embedmissedlines.ps1" -mdFile "$script:coverage_report_path"
 
 }
 
