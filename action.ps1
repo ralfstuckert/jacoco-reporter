@@ -56,9 +56,12 @@ function Build-CoverageReport
     if (-not $coverage_report_title) {
         $script:coverage_report_title = $script:coverage_report_name
     }
-
+    if (-not $script:coverage_report_path) {
         $script:coverage_report_path = Join-Path $test_results_dir coverage-results.md
-        & "$PSScriptRoot/jacoco-report/jacocoxml2md.ps1" -Verbose `
+    }
+
+    Write-Output "[$script:coverage_report_path]"
+    "$PSScriptRoot/jacoco-report/jacocoxml2md.ps1" -Verbose `
             -xmlFile $script:coverage_results_path `
             -mdFile $script:coverage_report_path -xslParams @{
                 reportTitle = $script:coverage_report_title
