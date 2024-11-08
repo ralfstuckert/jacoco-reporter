@@ -22,6 +22,8 @@ foreach ($line in $mdData) {
         }
         $workspaceFiles = Get-ChildItem -Path "$env:GITHUB_WORKSPACE" -Recurse -File
         $resolvedFilePath = $workspaceFiles | Where-Object {$_.FullName -like "*$filePath"}
+            Write-Output "resolvedFilePath is [$resolvedFilePath]"
+
         $fileContents = Get-Content -Path $resolvedFilePath
         $missedLine = $fileContents[$arrayLineNumber]
 
