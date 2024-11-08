@@ -61,7 +61,7 @@ function Build-CoverageReport
     }
 
     Write-Output "[$script:coverage_report_path]"
-    "$PSScriptRoot/jacoco-report/jacocoxml2md.ps1" -Verbose `
+    & "$PSScriptRoot/jacoco-report/jacocoxml2md.ps1" -Verbose `
             -xmlFile $script:coverage_results_path `
             -mdFile $script:coverage_report_path -xslParams @{
                 reportTitle = $script:coverage_report_title
