@@ -5,6 +5,8 @@ param(
     [string]$mdFile
 )
 
+    Write-Output "mdFile is [$mdFile]"
+
 $mdData = Get-Content -Path $mdFile
 
 $outputData = @()
