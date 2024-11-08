@@ -9,6 +9,8 @@ param(
 
 $mdData = Get-Content -Path $mdFile
 
+    Write-Output "mdData is [$mdData]"
+
 $outputData = @()
 foreach ($line in $mdData) {
     if ($line -like "- Line #*") {
